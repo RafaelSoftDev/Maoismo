@@ -350,3 +350,42 @@
     transition: none;
   }
 }
+
+/* DOCUMENTOS HISTÓRICOS: distribución editorial */
+.primary-documents-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+  align-items: center;
+  gap: 2rem;
+}
+.primary-documents {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: center;
+}
+
+.historical-document {
+  margin: 0;
+  width: 100%;
+  max-width: 220px;
+  justify-self: center;
+}
+.historical-document img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+}
+
+.methodology-intro .historical-document {
+  margin-top: 1.5rem;
+}
+@media (max-width: 760px) {
+  .primary-documents-layout { grid-template-columns: 1fr; gap: 1rem; }
+  .methodology-intro .historical-document { margin-inline: auto; }
+}
+@media (max-width: 380px) {
+  .primary-documents { grid-template-columns: 1fr; }
+}
+

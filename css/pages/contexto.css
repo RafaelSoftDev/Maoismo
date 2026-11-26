@@ -248,20 +248,77 @@
 
 .mao-profile-content {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: minmax(120px, 180px) minmax(0, 1fr);
   gap: 2rem;
   align-items: start;
 }
 
-.mao-monogram {
-  display: grid;
-  place-items: center;
-  width: 120px;
-  height: 120px;
-  border: 1px solid rgba(197, 164, 109, 0.45);
-  color: var(--color-accent, #c5a46d);
-  font-size: 4rem;
+.mao-portrait {
+  margin: 0;
+  min-width: 0;
 }
+
+.mao-portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: #211d19;
+  border: 1px solid rgba(197, 164, 109, 0.45);
+}
+
+.mao-portrait figcaption {
+  margin-top: .6rem;
+  font-size: .8rem;
+  color: var(--color-muted, #b8b0a4);
+}
+
+/* PROTAGONISTAS HISTÓRICOS */
+.context-portraits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.context-portrait-card {
+  display: grid;
+  grid-template-columns: minmax(0, 150px) minmax(0, 1fr);
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(197, 164, 109, .25);
+  background: rgba(255, 255, 255, .025);
+}
+
+.context-portrait-card img {
+  display: block;
+  width: 100%;
+  max-width: 150px;
+  height: 200px;
+  object-fit: contain;
+  background: #211d19;
+}
+
+.context-portrait-copy { min-width: 0; padding: 0; }
+.context-portrait-copy h3 { margin: .5rem 0 .75rem; }
+.context-portrait-copy p { line-height: 1.7; }
+.context-portrait-date {
+  color: var(--color-accent, #c5a46d);
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+@media (max-width: 1000px) {
+  .context-portraits { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 650px) {
+  .mao-portrait { max-width: 220px; }
+  .context-portrait-card { grid-template-columns: 1fr; }
+  .context-portrait-card img { max-width: 150px; margin: 0 auto; }
+}
+
 
 /* CONCLUSIÓN */
 
