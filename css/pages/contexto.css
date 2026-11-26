@@ -105,14 +105,15 @@
   border: 1px solid rgba(197, 164, 109, 0.25);
 }
 
-.civil-war-visual::before {
-  content: "1949";
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  color: rgba(255, 255, 255, 0.08);
-  font-size: clamp(5rem, 12vw, 10rem);
-  font-weight: 800;
+.civil-war-visual {
+  background:
+    linear-gradient(
+      0deg,
+      rgba(23, 21, 19, 0.95),
+      rgba(23, 21, 19, 0.12)
+    ),
+    url("../../assets/images/historical/guerra_civil.jpeg") center / cover no-repeat,
+    #211d19;
 }
 
 .visual-label {
@@ -360,4 +361,3 @@
     transform: none;
   }
 }
-

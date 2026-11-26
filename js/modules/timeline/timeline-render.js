@@ -120,14 +120,22 @@ export function renderCards(container, eventos, onSelect) {
 
 /* ---------- Panel ampliado ---------- */
 function renderFoto(fig, e) {
-  const ruta = `assets/images/historical/${e.id}.jpg`;
-  const img = h("img", { src: `${getRoot()}${ruta}`, alt: `Fotografía histórica asociada a: ${e.titulo}` });
+  const extensiones = ["jpg", "jpeg", "png", "webp"];
+  const base = `${getRoot()}assets/images/historical/${e.id}`;
+  const img = h("img", {
+    alt: `Fotografía histórica asociada a: ${e.titulo}`
+  });
+  let intento = 0;
   img.addEventListener("error", () => {
-    img.replaceWith(h("div", { class: "photo-missing" },
-      h("p", { text: "Fotografía pendiente" }),
-      h("p", { class: "muted", text: `Guarda la imagen en ${ruta}` })));
-  }, { once: true });
-  fig.replaceChildren(img, h("figcaption", { class: "muted", text: "Crédito y licencia de la fotografía: por completar." }));
+    intento++;
+    if (intento < extensiones.length) {
+      img.src = `${base}.${extensiones[intento]}`;
+    } else {
+      fig.replaceChildren();
+    }
+  });
+  img.src = `${base}.${extensiones[intento]}`;
+  fig.replaceChildren(img);
 }
 
 export function renderPanel(refs, e, posicion, total) {

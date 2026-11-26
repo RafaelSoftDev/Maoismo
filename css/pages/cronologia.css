@@ -28,7 +28,7 @@
 /* Panel */
 .chrono-panel-section { padding-block: var(--space-5); }
 .chrono-panel { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.4fr); gap: var(--space-4); align-items: start; }
-.panel-photo { position: sticky; top: calc(var(--header-h) + 1rem); }
+.panel-photo { position: static; min-width: 0; margin: 0; }
 .panel-photo img, .photo-missing { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #d8caac; border-top: 4px solid var(--gold); }
 .photo-missing { display: grid; place-content: center; text-align: center; padding: var(--space-3); color: #52463d; }
 .panel-photo figcaption { margin-top: .5rem; }
@@ -60,6 +60,5 @@
 
 @media (max-width: 52rem) {
   .chrono-panel { grid-template-columns: 1fr; gap: var(--space-3); }
-  .panel-photo { position: static; }
   .chrono-track { --yr: 5.5rem; }
 }

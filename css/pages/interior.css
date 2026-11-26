@@ -1,3 +1,23 @@
+/* Fondos de las páginas interiores */
+body[data-page="contexto"] {
+  --page-background: url("../../assets/images/backgrounds/background_2.jpg");
+}
+body[data-page="documental"] {
+  --page-background: url("../../assets/images/backgrounds/background_3.jpeg");
+}
+body[data-page="cronologia"] {
+  --page-background: url("../../assets/images/backgrounds/background_4.jpeg");
+}
+body[data-page="red-historica"] {
+  --page-background: url("../../assets/images/backgrounds/background_5.jpeg");
+}
+body[data-page="consecuencias"] {
+  --page-background: url("../../assets/images/backgrounds/background_6.jpeg");
+}
+body[data-page="fuentes"] {
+  --page-background: url("../../assets/images/backgrounds/background_7.jpeg");
+}
+
 .page-head {
   padding-block: var(--space-5) var(--space-4);
   background:
@@ -8,10 +28,10 @@
     ),
     linear-gradient(
       90deg,
-      rgba(20, 16, 14, .94),
-      rgba(20, 16, 14, .72)
+      rgba(20, 16, 14, .90),
+      rgba(20, 16, 14, .55)
     ),
-    url("../../assets/images/backgrounds/background_2.jpg");
+    var(--page-background, url("../../assets/images/backgrounds/background_2.jpg"));
 
   background-size: cover;
   background-position: center 45%;

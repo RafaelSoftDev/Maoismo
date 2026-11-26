@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="../css/layout/footer.css">
 
   <link rel="stylesheet" href="../css/components/buttons.css">
+  <link rel="stylesheet" href="../css/components/quiz.css">
 
   <link rel="stylesheet" href="../css/pages/interior.css">
   <link rel="stylesheet" href="../css/pages/fuentes.css">
@@ -50,6 +51,21 @@
 
       </div>
     </header>
+
+    <section class="quiz-section surface-dark" id="seccion-quiz" aria-label="Cuestionario histórico">
+      <div class="container quiz-wrap">
+        <div id="quiz-trigger-wrap" style="text-align: center; padding-block: var(--space-3);">
+          <p style="margin: 0 0 var(--space-2); font-size: var(--step--1); letter-spacing: .08em; text-transform: uppercase; color: var(--gold);">
+            Cierre del recorrido
+          </p>
+          <button type="button" id="btn-abrir-quiz" class="btn">
+            Quiz del maoísmo en China
+          </button>
+        </div>
+
+        <div id="quiz-app" style="display: none;"></div>
+      </div>
+    </section>
 
     <!-- INTRODUCCIÓN -->
     <section class="section surface-light">
@@ -696,6 +712,18 @@
   <div id="site-footer"></div>
 
   <script type="module" src="../js/main.js"></script>
+  <script type="module">
+    import { init } from "../js/pages/quiz.js";
+    init();
+  </script>
+
+  <script>
+    document.getElementById("btn-abrir-quiz")?.addEventListener("click", () => {
+      document.getElementById("quiz-trigger-wrap").style.display = "none";
+      document.getElementById("quiz-app").style.display = "block";
+      document.getElementById("quiz-pregunta")?.focus();
+    });
+  </script>
 
 </body>
 </html>
